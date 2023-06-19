@@ -2,12 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 body{
-    background-color: rgb(227,230,230);
+    background-color: black;
     overflow-x: hidden;
-    background-image: url("./TestBackground.jpg");
+    /* background-image: url("./EndlessBackground4.jpg"); */
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
@@ -96,6 +97,9 @@ body{
 
 .products{
     width: 70%;
+    background-image: url("./EndlessBackground4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -117,7 +121,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    color: black;
+    color: white;
 }
 
 
