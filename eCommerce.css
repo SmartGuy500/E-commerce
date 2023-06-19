@@ -5,9 +5,12 @@
 }
 
 body{
-
     background-color: rgb(227,230,230);
     overflow-x: hidden;
+    background-image: url("./TestBackground.jpg");
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -31,9 +34,36 @@ body{
     justify-content: space-around;
 }
 
-.navbar{
+.navbar1{
     width: 100%;
     background-color: black;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar2{
+    width: 100%;
+    background-color: rgb(4, 39, 37);
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar3{
+    width: 100%;
+    background-color: green;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar4{
+    width: 100%;
+    background-color: blue;
     display: flex;
     color: white;
     justify-content: space-around;
@@ -110,6 +140,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cartButton{
+    cursor: pointer;
 }
 
 .hidden {

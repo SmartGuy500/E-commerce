@@ -5,15 +5,33 @@
 const categories = document.querySelector('.categories')
 const products = document.querySelector('.products')
 const form = document.querySelector('.form')
+let cartNum  = document.querySelector('.cartNum')
 let searchParam = ''
 
 let cartItem = []
+
+const fetchProducts = async ()=>{
+    const response = await fetch('https://dummyjson.com/products')
+    const data = await response.json()
+    console.log(data)
+    data.products.forEach((product)=>{
+        const container = document.createElement('div')
+        container.classList.add('containerProduct')
+        container.innerHTML = `
+            <div class="productImage"><img src="${product.thumbnail}"/></div>
+            <h2>${product.title}</h2>
+            <h3>£ ${product.price}</h3>
+            <button class="cartButton">Add to cart</button>`
+        products.appendChild(container)
+
+    })
+}
+fetchProducts()
 
 
 const fetchCategories = async() => {
     const response = await fetch ("https://dummyjson.com/products/categories")
     const data = await response.json()
-    console.log(data)
 
     data.forEach(async (category) =>{
         const list =document.createElement('ul')
@@ -46,7 +64,7 @@ form.addEventListener('submit',async (e)=>{
     const input = form.querySelector('.input')
     searchParam = input.value
     products.innerHTML = ''
-    console.log(searchParam)
+
 
     try{
         searchProducts(searchParam)
@@ -61,7 +79,6 @@ const searchProducts = async (product)=>{
     const response = await fetch(`https://dummyjson.com/products/search?q=${product}`)
     const data = await response.json()
     data.products.forEach((item)=>{
-        console.log(item)
         const container = document.createElement('div')
         container.classList.add('containerProduct')
         container.innerHTML = `
@@ -79,7 +96,6 @@ const searchProducts = async (product)=>{
             image: item.thumbnail, 
         }
         cartItem.push(cartProduct)
-        console.log(cartItem)
         localStorage.setItem("cartItem", JSON.stringify(cartItem))
         cartNum.innerHTML = cartItem.length
     })
@@ -88,7 +104,6 @@ const searchProducts = async (product)=>{
 }
 
 categories.addEventListener('click', (e)=>{
-    console.log(e.target.tagName)
     const collapsable = e.target.querySelector('.parentul')
     if (e.target.tagName === 'DIV') {
         collapsable.classList.toggle('hidden')
