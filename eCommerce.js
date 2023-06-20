@@ -13,7 +13,6 @@ let cartItem = []
 const fetchProducts = async ()=>{
     const response = await fetch('https://dummyjson.com/products')
     const data = await response.json()
-    console.log(data)
     data.products.forEach((product)=>{
         const container = document.createElement('div')
         container.classList.add('containerProduct')
@@ -21,10 +20,23 @@ const fetchProducts = async ()=>{
             <div class="productImage"><img src="${product.thumbnail}"/></div>
             <h2>${product.title}</h2>
             <h3>£ ${product.price}</h3>
-            <button class="cartButton" style="background-color: grey">Add to cart</button>`
-        products.appendChild(container)
+            <button class="cartButton" style="background-color: grey">Add to cart</button>
+        `
+
+        const cartButton = container.querySelector('.cartButton')
+        cartButton.addEventListener('click', ()=> {
+            const cartProduct = {
+                title: product.title,
+                price: product.price,
+                image: product.thumbnail, 
+            }
+            cartItem.push(cartProduct)
+            localStorage.setItem("cartItem", JSON.stringify(cartItem))
+            cartNum.innerHTML = cartItem.length
 
     })
+    products.appendChild(container)
+})
 }
 fetchProducts()
 
