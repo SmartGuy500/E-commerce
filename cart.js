@@ -8,6 +8,8 @@ try{products.forEach((product, index) =>{
     item.classList.add("item")
     item.innerHTML= `
     <div class="imageCont"><img class="image" src="${product.image}" /></div>
+    <h2 style="color: lightgray;">${product.title}</h2>
+    <h3 style="color: lightgray;">£ ${product.price}</h3>
     <button class="Remove">Remove from cart</button> 
     `
 

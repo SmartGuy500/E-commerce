@@ -21,7 +21,7 @@ const fetchProducts = async ()=>{
             <div class="productImage"><img src="${product.thumbnail}"/></div>
             <h2>${product.title}</h2>
             <h3>£ ${product.price}</h3>
-            <button class="cartButton">Add to cart</button>`
+            <button class="cartButton" style="background-color: grey">Add to cart</button>`
         products.appendChild(container)
 
     })
@@ -85,7 +85,7 @@ const searchProducts = async (product)=>{
             <div class="productImage"><img src="${item.thumbnail}"/></div>
             <h2>${item.title}</h2>
             <h3>£ ${item.price}</h3>
-            <button class="cartButton">Add to cart</button>
+            <button class="cartButton" style="background-color: grey">Add to cart</button>
         `
 
     const cartButton = container.querySelector('.cartButton')
