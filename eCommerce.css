@@ -35,6 +35,12 @@ body{
     justify-content: space-around;
 }
 
+.cartIcon{
+    :hover{
+        color: green;
+    }
+}
+
 .navbar1{
     width: 100%;
     background-color: black;

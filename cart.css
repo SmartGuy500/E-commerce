@@ -21,6 +21,9 @@ body{
     flex-direction: column;
     align-items: center;
     color: aliceblue;
+    :hover{
+        color: red;
+    }
 }
 
 .container{
