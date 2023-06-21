@@ -30,9 +30,8 @@ const fetchProducts = async ()=>{
                 price: product.price,
                 image: product.thumbnail, 
             }
-            cartItem.push(cartProduct)
-            localStorage.setItem("cartItem", JSON.stringify(cartItem))
-            cartNum.innerHTML = cartItem.length
+            
+            
 
     })
     products.appendChild(container)
